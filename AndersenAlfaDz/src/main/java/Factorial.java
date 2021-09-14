@@ -4,6 +4,8 @@ public class Factorial {
 
     private static final Factorial FACTORIAL = new Factorial();
 
+    private Factorial() {
+    }
 
     private static long factorial(long x) {
         if (x == 1) {
