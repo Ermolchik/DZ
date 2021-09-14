@@ -3,9 +3,8 @@ public class Main {
 
 //        numberUno();
 //        numberDos();
-
-
-        System.out.println(Factorial.getNumber());
+        FactorialRecurs.getFactorial(8);
+        System.out.println(FactorialRecurs.getNumber());
 
 
     }

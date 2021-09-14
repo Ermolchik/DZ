@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Revers {
 
-    public static void main(Strings[] args) {
+    public static void main(String[] args) {
         reversColl();
         reversMassiv();
     }
