@@ -8,6 +8,11 @@ public class User {
     String symbol;
     Month month;
 
+
+    //    Пользователь вводит английскую букву. Вывести в консоль –
+//гласная эта буква или согласная. Выполнить это задание при
+//помощи операторов if, а потом при помощи switch. Сравнить оба
+//решения.
     public void getSymbol() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите букву:");
@@ -31,6 +36,10 @@ public class User {
 
     }
 
+    //    Пользователь вводит английскую букву. Вывести в консоль –
+//гласная эта буква или согласная. Выполнить это задание при
+//помощи операторов if, а потом при помощи switch. Сравнить оба
+//решения.
     public void ifVowel() {
         if (symbol.equals("A") ||
                 symbol.equals("E") ||
@@ -45,6 +54,9 @@ public class User {
 
     }
 
+    //    Пользователь вводит название месяца. Вывести в консоль к какой
+//поре года этот месяц относиться. Если пользователь допустил
+//опечатку – вывести сообщение об ошибке.
     public void setMonth() {
         System.out.println("Введите месяц :");
         Scanner scanner = new Scanner(System.in);
@@ -63,6 +75,10 @@ public class User {
 
     }
 
+    //Пользователь вводит слово в консоль, если это слово “exit” –
+//программа завершается, при других - печатает ввод
+//пользователя обратно в консоль и предлагает ввести следующее
+//слово.
     public void word() {
         Scanner scanner = new Scanner(System.in);
 
@@ -83,8 +99,9 @@ public class User {
 
     }
 
-    //    @Description("4. Пользователь вводит два числа. Найти сумму всех чисел" +
-//            "расположенных между ними и которые делятся на 3.")
+    //     Пользователь вводит два числа. Найти сумму всех чисел
+    //расположенных между ними и которые делятся на 3.
+
     public void sum() {
 
         Scanner scanner = new Scanner(System.in);
@@ -112,6 +129,7 @@ public class User {
         }
     }
 
+    //     Пользователь вводит строку в консоль. Вывести, является ли эта строка палиндромом.
     public void palindrome() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите слово");
@@ -125,6 +143,7 @@ public class User {
         System.out.println("not palindrome");
     }
 
+    //    В массиве чисел найти наименьшее и наибольшее.
     public void maxAndMin() {
         int[] array = new int[]{10, 52, 487, 87, 26, 7, 645, 52};
 
@@ -142,12 +161,14 @@ public class User {
         System.out.println("Минимальное число:" + min);
     }
 
+    //    Дан массив из пяти элементов. При помощи цикла получить
+//отсортированный массив в порядке возрастания элементов.
     public void mass() {
         int[] array = new int[]{10, 52, 487, 87, 26};
         System.out.println(Arrays.toString(array));
-        for (int j = 0; j <array.length; j++) {
+        for (int j = 0; j < array.length; j++) {
 
-            for (int i = 0; i < array.length-1; i++) {
+            for (int i = 0; i < array.length - 1; i++) {
                 if (array[i] > array[i + 1]) {
                     array[i] = array[i + 1] + array[i];
                     array[i + 1] = array[i] - array[i + 1];
@@ -158,84 +179,93 @@ public class User {
         System.out.println(Arrays.toString(array));
     }
 
+    //Создать массив на n-элементов и заполнить его числами
+//фиббоначи.
+    static long fibonachi(long n) {
 
-        static long fibonachi(long n) {
-
-            if (n == 0) {
-                return 0;
-            }
-            if (n == 1) {
-                return 1;
-            } else {
-                return fibonachi(n - 1) + fibonachi(n - 2);
-            }
+        if (n == 0) {
+            return 0;
         }
+        if (n == 1) {
+            return 1;
+        } else {
+            return fibonachi(n - 1) + fibonachi(n - 2);
+        }
+    }
 
-        public void massiveFib(){
+    public void massiveFib() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размер массива:");
-        long[]array = new long[scanner.nextInt()];
-
-            for (int i = 0; i < array.length ; i++) {
-                array[i]=fibonachi(i);
-
-            }
-            System.out.println(Arrays.toString(array));
-        }
-        public void summaMinAndMax(){
-            int[] array = new int[]{10, 52, 487, 87, 26, 7, 645, 52};
-
-            int min = array[0];
-            int max = array[0];
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] > max) {
-                    max = array[i];
-                }
-                if (array[i] < min) {
-                    min = array[i];
-                }
-            }
-
-            System.out.println("Сумма минимальнго и максимального числа:" + (max + min));
-
-        }
-        public void even(){
-            int[] array = new int[]{10, 52, 487, 87, 26, 7, 645, 52};
-
-            int summEven = 0;
-            int summNotEven = 0;
-            for (int i = 0; i < array.length; i++) {
-                if (i %2 ==0) {
-                    summEven = summEven + array[i];
-                }
-              else {
-                  summNotEven = summNotEven + array[i];
-                }
-            }
-            System.out.println("Разница между суммой элементов стоящих на четных" +
-                    " и нечетных местах: " + (summEven-summNotEven));
-        }
-
-        public void repeatNumber(){
-        int[] array = new int[]{10, 52, 487, 87, 26, 7, 645, 7};
-
-        int repeat = 0;
-        int number = 0;
-
-        int[] array2 = new int[array.length];
+        long[] array = new long[scanner.nextInt()];
 
         for (int i = 0; i < array.length; i++) {
-           number = array[i];
-            for (int j = 0; j <array.length; j++) {
-                if(number == array[j]){
-                    repeat++;
-                }
+            array[i] = fibonachi(i);
 
+        }
+        System.out.println(Arrays.toString(array));
+    }
+
+    //         В произвольном массиве найти сумму минимального и
+    //максимального элементов.
+    public void summaMinAndMax() {
+        int[] array = new int[]{10, 52, 487, 87, 26, 7, 645, 52};
+
+        int min = array[0];
+        int max = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
             }
-            array2[i]=repeat;
-            repeat =0;
-            System.out.println(array2[i]);
+            if (array[i] < min) {
+                min = array[i];
+            }
         }
 
+        System.out.println("Сумма минимальнго и максимального числа:" + (max + min));
+
     }
+
+
+    //        Найти разницу между суммой элементов стоящих на четных
+//и нечетных местах.
+    public void even() {
+        int[] array = new int[]{10, 52, 487, 87, 26, 7, 645, 52};
+
+        int summEven = 0;
+        int summNotEven = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 == 0) {
+                summEven = summEven + array[i];
+            } else {
+                summNotEven = summNotEven + array[i];
+            }
+        }
+        System.out.println("Разница между суммой элементов стоящих на четных" +
+                " и нечетных местах: " + (summEven - summNotEven));
+    }
+
+
+
+//    public void repeatNumber() {
+//        int[] array = new int[]{10, 52, 487, 87, 26, 7, 645, 7};
+//
+//        int repeat = 0;
+//        int number = 0;
+//
+//        int[] array2 = new int[array.length];
+//
+//        for (int i = 0; i < array.length; i++) {
+//            number = array[i];
+//            for (int j = 0; j < array.length; j++) {
+//                if (number == array[j]) {
+//                    repeat++;
+//                }
+//
+//            }
+//            array2[i] = repeat;
+//            repeat = 0;
+//            System.out.println(array2[i]);
+//        }
+//
+//    }
 }
